@@ -4,12 +4,11 @@ import com.leo.computerstore.entity.User;
 import com.leo.computerstore.mapper.UserMapper;
 import com.leo.computerstore.service.IUserService;
 import com.leo.computerstore.service.ex.InsertException;
-import com.leo.computerstore.service.ex.UserNameDuplicatedException;
+import com.leo.computerstore.service.ex.UsernameDuplicatedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
-import java.security.SecureRandom;
 import java.util.Date;
 import java.util.UUID;
 
@@ -28,7 +27,7 @@ public class UserServiceImpl implements IUserService {
         //判断结果集是否为null,不为null的话则需抛出用户名被占用的异常
         if (result != null) {
             //抛出异常
-            throw new UserNameDuplicatedException("用户名被占用");
+            throw new UsernameDuplicatedException("用户名被占用");
         }
 
         /**
