@@ -22,7 +22,7 @@ public class UserMapperTests {
     private UserMapper userMapper;
 
     @Test
-    public void insert() {
+    public void insertTest() {
         User user = new User();
         user.setUsername("张三");
         user.setPassword("123456");
@@ -31,7 +31,7 @@ public class UserMapperTests {
     }
 
     @Test
-    public void findByUsername() {
+    public void findByUsernameTest() {
         User user = userMapper.findByUsername("张三");
         System.out.println(user);
     }
